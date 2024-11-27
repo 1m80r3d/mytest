@@ -17,7 +17,7 @@ build:
 	docker build --tag crop .
 
 run_docker:
-	docker run ${PWD}/satellite_images:/data -p 8000 -i -t crop:latest
+	docker run -v ${PWD}/satellite_images:/data -p 8000 -i -t crop:latest
 
 run_docker_shell:
 	docker run -v ${PWD}/satellite_images:/data -p 8000 -i -t crop:latest /bin/bash
